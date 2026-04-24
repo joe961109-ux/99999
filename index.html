@@ -8,13 +8,44 @@
 </head>
 <body>
  <div id="wrap">
-        <h1>家</h1>
-        <ul>
-        <li>貓</li>
-        </ul>
-        <h2>這是貓</h2>
-        <img src="Cat_.jpg" width="300">
+    <h1>家</h1>
+    <ul>
+        <li id="cat">貓</li>
+    </ul>
+    <h2 id="title">這是貓</h2>
+    <img id="img" src="Cat_.jpg" width="300">
  </div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    // 取得元素（用 id 最穩）
+    const catText = document.getElementById("cat");
+    const title = document.getElementById("title");
+    const img = document.getElementById("img");
+
+    // 防呆：確認元素真的存在
+    if (!catText || !title || !img) {
+        console.log("有元素沒抓到，請檢查 id 是否正確");
+        return;
+    }
+
+    // 點擊圖片
+    catText.addEventListener("click", function () {
+        alert("你點擊了貓！");
+        title.textContent = "貓真的很可愛 🐱";
+    });
+
+    // 點擊圖片（切換大小）
+    img.addEventListener("click", function () {
+        if (img.width === 300) {
+            img.width = 500;
+        } else {
+            img.width = 300;
+        }
+    });                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+
+});
+</script>
 </body>
 
 </html>
